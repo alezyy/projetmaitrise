@@ -15,15 +15,8 @@
         @endif
         <br>
         <div class="row"> @include('includes.company_dashboard_menu')
-            <div class="col-md-9 col-sm-8"> @include('includes.company_dashboard_stats')<br><br><br><br><br>
-        <?php
-        if((bool)config('company.is_company_package_active')){        
-        $packages = App\Package::where('package_for', 'like', 'employer')->get();
-        $package = Auth::guard('company')->user()->getPackage();
-        ?>
-        @include('includes.company_package_msg')
-        @include('includes.company_packages_new')
-        <?php } ?>
+            <div class="col-md-9 col-sm-8">
+
         </div>
         </div>
     </div>
