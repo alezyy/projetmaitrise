@@ -13,7 +13,7 @@
             <div class="title"> <span>{{__('We Are Here For Your Help')}}</span>
                 <h2>{{__('GET IN TOUCH FAST')}}</h2>
                 <p>
-                    {{__('If you have any questions, comments or concerns about JOB EXPLORER,')}}
+                    {{__('If you have any questions, comments or concerns about The Project,')}}
                     <br>
                     {{__('Please send us an email to support and assist you.')}}
                 </p>

@@ -1,7 +1,7 @@
 <div class="header">
     <div class="container">
         <div class="row">
-            <div class="col-md-2 col-sm-3 col-xs-12"> <a href="{{url('/')}}" class="logo" ><img src="{{ asset('/') }}sitesetting_images/jobexplorer.png" id="mainlogo" alt="{{ $siteSetting->site_name }}" /></a>
+            <div class="col-md-2 col-sm-3 col-xs-12"> <a href="{{url('/')}}" class="logo" ><img src="{{ asset('/') }}sitesetting_images/logo-october-laravel.png" id="mainlogo" alt="{{ $siteSetting->site_name }}" /></a>
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
                 </div>
@@ -14,16 +14,13 @@
                     <div class="navbar-collapse collapse" id="nav-main">
                         <ul class="nav navbar-nav">
                             <li class="{{ Request::url() === route('index') ? 'active' : '' }}"><a href="{{url('/')}}">{{__('Home')}}</a> </li>
-                            <li class="{{ Request::url()}}"><a href="{{url('/jobs')}}">{{__('Jobs')}}</a> </li>
                             <!--<li class="{{ Request::url()}}"><a href="{{url('/news/jobs')}}">{{__('News')}}</a> </li>-->
-                            <li class="{{ Request::url()}}"><a href="{{url('/companies')}}">{{__('Companies')}}</a> </li>
-                            <li class="{{ Request::url()}}"><a href="{{url('/pricing')}}">{{__('Pricing')}}</a> </li>
 
                             @foreach($show_in_top_menu as $top_menu) @php $cmsContent = App\CmsContent::getContentBySlug($top_menu->page_slug); @endphp
                             <li class="{{ Request::url() === route('cms', $top_menu->page_slug) ? 'active' : '' }}"><a href="{{ route('cms', $top_menu->page_slug) }}">{{ $cmsContent->page_title }}</a> </li>
                             @endforeach
 
-                            <!--<li class="{{ Request::url() === route('contact.us') ? 'active' : '' }}"><a href="{{ route('contact.us') }}">{{__('Contact us')}}</a> </li>-->
+                            <li class="{{ Request::url() === route('contact.us') ? 'active' : '' }}"><a href="{{ route('contact.us') }}">{{__('Contact us')}}</a> </li>
 
 
                             @if(Auth::check())
@@ -40,12 +37,12 @@
                                 </ul>
                             </li>
                             @endif @if(Auth::guard('company')->check())
-                            <li class="postjob"><a href="{{route('post.job')}}">{{__('Post a job')}}</a> </li>
+                            <li class="postjob"><a href="{{route('post.job')}}">{{__('Conversion')}}</a> </li>
                             <li class="dropdown userbtn"><a href="">{{Auth::guard('company')->user()->printCompanyImage()}}</a>
                                 <ul class="dropdown-menu">
                                     <li><a href="{{route('company.home')}}"><i class="fa fa-tachometer" aria-hidden="true"></i> {{__('Dashboard')}}</a> </li>
                                     <li><a href="{{ route('company.profile') }}"><i class="fa fa-user" aria-hidden="true"></i> {{__('Company Profile')}}</a></li>
-                                    <li><a href="{{ route('post.job') }}"><i class="fa fa-desktop" aria-hidden="true"></i> {{__('Post Job')}}</a></li>
+                                    <li><a href="{{ route('post.job') }}"><i class="fa fa-desktop" aria-hidden="true"></i> {{__('Conversion')}}</a></li>
                                     <li><a href="{{route('company.messages')}}"><i class="fa fa-envelope-o" aria-hidden="true"></i> {{__('Company Messages')}}</a></li>
                                     <li><a href="{{ route('company.logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form-header1').submit();">{{__('Logout')}}</a> </li>
                                     <form id="logout-form-header1" action="{{ route('company.logout') }}" method="POST" style="display: none;">
@@ -60,7 +57,7 @@
 
                                 <ul class="dropdown-menu">
                                     <li><a href="{{route('login')}}">{{__('Sign in')}}</a> </li>
-                                    <li><a href="{{route('register')}}">{{__('Register')}}</a> </li>
+                                    <!--<li><a href="{{route('register')}}">{{__('Register')}}</a> </li>-->
                                 </ul>
 
                                 <!-- dropdown end --> 

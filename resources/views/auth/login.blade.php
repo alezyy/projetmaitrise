@@ -17,8 +17,8 @@
                             <?php
                             $c_or_e = old('candidate_or_employer', 'candidate');
                             ?>
-                            <li class="{{($c_or_e == 'candidate')? 'active':''}}"><a data-toggle="tab" href="#candidate" aria-expanded="true">{{__('Candidate')}}</a></li>
-                            <li class="{{($c_or_e == 'employer')? 'active':''}}"><a data-toggle="tab" href="#employer" aria-expanded="false">{{__('Employer')}}</a></li>
+                            <li class="{{($c_or_e == 'candidate')? 'active':''}}"><a data-toggle="tab" href="#candidate" aria-expanded="true">{{__('Community')}}</a></li>
+                            <li class="{{($c_or_e == 'employer')? 'active':''}}"><a data-toggle="tab" href="#employer" aria-expanded="false">{{__('Developer')}}</a></li>
                         </ul>
                     </div>
                     <div class="tab-content">

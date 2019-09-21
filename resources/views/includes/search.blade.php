@@ -21,21 +21,14 @@
 <!--Search Bar start-->
 <div class="searchbar searchblack">
     <div class="container">
-        @include('includes.search_form')
+
     </div>
 </div>
 <!-- Search End -->
 @else
 <div class="searchwrap">
     <div class="container">
-        <h3>{{__('One million success stories')}}. <span>{{__('Start yours today')}}.</span></h3>
-
-        @include('includes.search_form')
-
-        <!-- button start
-        <div class="getstarted"><a href="{{url('/')}}"><i class="fa fa-user" aria-hidden="true"></i> {{__('Get Started Now')}}</a></div>
-        button end -->
-
+        <h3>{{__('Project : Convert October-CMS')}}. <span>{{__('To Laravel')}}.</span></h3>
     </div>
 </div>
 @endif

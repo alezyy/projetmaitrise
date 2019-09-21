@@ -29,20 +29,12 @@
         <li class="heading">
             <h3 class="uppercase">Modules</h3>
         </li>
-        @include('admin/shared/side_bars/job')
+
         @include('admin/shared/side_bars/company')
         @include('admin/shared/side_bars/site_user')
         @include('admin/shared/side_bars/cms')
-        @include('admin/shared/side_bars/seo')
-        @include('admin/shared/side_bars/faq')
-        @include('admin/shared/side_bars/video')
-        @include('admin/shared/side_bars/testimonial')
-        @include('admin/shared/side_bars/slider')
 
-        <li class="heading">
-            <h3 class="uppercase">Manage News</h3>
-        </li>
-        @include('admin/shared/side_bars/news')
+
 
     @if(APAuthHelp::check(['SUP_ADM']))
         <li class="heading">
@@ -60,42 +52,10 @@
 
 		
         <li class="heading">
-            <h3 class="uppercase">User Packages</h3>
-        </li>
-        @include('admin/shared/side_bars/package')
-
-		
-		
-        <li class="heading">
-            <h3 class="uppercase">Job Attributes</h3>
-        </li>
-        @include('admin/shared/side_bars/language_level')
-        @include('admin/shared/side_bars/career_level')
-        @include('admin/shared/side_bars/functional_area')
-        @include('admin/shared/side_bars/gender') 
-        @include('admin/shared/side_bars/industry') 
-        @include('admin/shared/side_bars/job_experience') 
-        @include('admin/shared/side_bars/job_skill') 
-        @include('admin/shared/side_bars/job_type') 
-        @include('admin/shared/side_bars/job_shift') 
-        @include('admin/shared/side_bars/degree_level') 
-        @include('admin/shared/side_bars/degree_type') 
-        @include('admin/shared/side_bars/major_subject')  
-        @include('admin/shared/side_bars/result_type')
-        @include('admin/shared/side_bars/marital_status')
-        @include('admin/shared/side_bars/ownership_type') 
-        @include('admin/shared/side_bars/salary_period') 
-		
-        <li class="heading">
             <h3 class="uppercase">Manage</h3>
         </li>		 
         @include('admin/shared/side_bars/site_setting')
-        @include('admin/shared/side_bars/tax_setting')
 
-        <li class="heading">
-            <h3 class="uppercase">Reporting</h3>
-        </li>
-        @include('admin/shared/side_bars/company_transaction')
         @endif
 
     </ul>

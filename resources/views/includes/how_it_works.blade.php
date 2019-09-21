@@ -11,24 +11,24 @@
             <li class="col-md-4 col-sm-4">
                 <div class="iconcircle"><i class="fa fa-user" aria-hidden="true"></i>
                 </div>
-                <h4>{{__('Create An Account')}}</h4>
-                <p>{{__('Employers are waiting for you to apply on jobs are fit to your skills and interests. Get email alerts directly to your inbox.')}}.</p>
+                <h4>{{__('Create An Account and Login')}}</h4>
+                <p>{{__('Need security account to login')}}.</p>
             </li>
             <!--step 1 end-->
             <!--step 2-->
             <li class="col-md-4 col-sm-4">
                 <div class="iconcircle"><i class="fa fa-black-tie" aria-hidden="true"></i>
                 </div>
-                <h4>{{__('Search Desired Job')}}</h4>
-                <p>{{__('The job application is often your first step. Enter the desired job-title, keywords in the keyboard search box.')}}.</p>
+                <h4>{{__('Prepare Task')}}</h4>
+                <p>{{__('List all information and parameters of octobercms and laravel')}}.</p>
             </li>
             <!--step 2 end-->
             <!--step 3-->
             <li class="col-md-4 col-sm-4">
                 <div class="iconcircle"><i class="fa fa-file-text" aria-hidden="true"></i>
                 </div>
-                <h4>{{__('Send Your Resume')}}</h4>
-                <p>{{__('Submit your current resume to become a searchable candidate to our recruiters in our database.')}}.</p>
+                <h4>{{__('Process To Transformation')}}</h4>
+                <p>{{__('Be Ready to process the conversion.')}}.</p>
             </li>
             <!--step 3 end-->
         </ul>
