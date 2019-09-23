@@ -11,7 +11,7 @@ return [
       | any other location as required by the application or its packages.
       |
      */
-    'name' => env('APP_NAME', 'JOB EXPLORER'),
+    'name' => env('APP_NAME', 'Research Project'),
     /*
       |--------------------------------------------------------------------------
       | Application Environment
@@ -44,7 +44,7 @@ return [
       | your application so that it is used when running Artisan tasks.
       |
      */
-    'url' => env('APP_URL', 'http://jobexplorer.ca'),
+    'url' => env('APP_URL', 'http://researchproject.ca'),
     /*
       |--------------------------------------------------------------------------
       | Application Timezone

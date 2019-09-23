@@ -1,13 +1,18 @@
 <div class="col-md-3 col-sm-4">
     <ul class="usernavdash">
         <li class="active"><a href="{{route('company.home')}}"><i class="fa fa-tachometer" aria-hidden="true"></i> {{__('Dashboard')}}</a></li>
-        <li><a href="{{ route('company.profile') }}"><i class="fa fa-user" aria-hidden="true"></i> {{__('Automation Panel')}}</a></li>
-        <li><a href="{{ route('post.job') }}"><i class="fa fa-desktop" aria-hidden="true"></i> {{__('Post Job')}}</a></li>
-        <li><a href="{{ route('posted.jobs') }}"><i class="fa fa-desktop" aria-hidden="true"></i> {{__('Company Jobs')}}</a></li>
+        <li><a href="{{ route('site.live') }}"><i class="fa fa-user" aria-hidden="true"></i> {{__('Add The Site Live URL')}}</a></li>
+        <li><a href="{{ route('server.dev') }}"><i class="fa fa-user" aria-hidden="true"></i> {{__('Add Server DEV Parameters')}}</a></li>
 
-        <li><a href="{{route('company.messages')}}"><i class="fa fa-envelope-o" aria-hidden="true"></i> {{__('Company Messages')}}</a></li>
-        <li><a href="{{route('company.followers')}}"><i class="fa fa-user-o" aria-hidden="true"></i> {{__('Company Followers')}}</a></li>
-        <li><a href="{{route('company.transactions')}}"><i class="fa fa-history" aria-hidden="true"></i> {{__('Company Transactions')}}</a></li>
+
+
+    <!--<li><a href="{{ route('company.profile') }}"><i class="fa fa-user" aria-hidden="true"></i> {{__('Automation Panel')}}</a></li>-->
+        <!--<li><a href="{{ route('post.job') }}"><i class="fa fa-desktop" aria-hidden="true"></i> {{__('Post Job')}}</a></li>-->
+        <!--li><a href="{{ route('posted.jobs') }}"><i class="fa fa-desktop" aria-hidden="true"></i> {{__('Company Jobs')}}</a></li>-->
+
+        <!--<li><a href="{{route('company.messages')}}"><i class="fa fa-envelope-o" aria-hidden="true"></i> {{__('Company Messages')}}</a></li>-->
+        <!--<li><a href="{{route('company.followers')}}"><i class="fa fa-user-o" aria-hidden="true"></i> {{__('Company Followers')}}</a></li>-->
+        <li><a href="{{route('company.transactions')}}"><i class="fa fa-history" aria-hidden="true"></i> {{__('Results')}}</a></li>
         <li><a href="{{ route('company.logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();"><i class="fa fa-sign-out" aria-hidden="true"></i> {{__('Logout')}}</a>
             <form id="logout-form" action="{{ route('company.logout') }}" method="POST" style="display: none;">{{ csrf_field() }}</form>
         </li>

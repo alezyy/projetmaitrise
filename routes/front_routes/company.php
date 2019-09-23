@@ -3,7 +3,11 @@
 Route::get('company-home', 'Company\CompanyController@index')->name('company.home');
 Route::get('company-premium/{id}', 'Company\CompanyController@buyPremium')->name('company.buy.premium');
 Route::get('companies', 'Company\CompaniesController@company_listing')->name('company.listing');
+
 Route::get('company-profile', 'Company\CompanyController@companyProfile')->name('company.profile');
+
+Route::get('conversion-site-live', 'Conversion\ConversionController@conversionSiteLive')->name('site.live');
+
 Route::put('update-company-profile', 'Company\CompanyController@updateCompanyProfile')->name('update.company.profile');
 Route::get('posted-jobs', 'Company\CompanyController@postedJobs')->name('posted.jobs');
 Route::get('company/{slug}', 'Company\CompanyController@companyDetail')->name('company.detail');

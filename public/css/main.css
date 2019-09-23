@@ -1273,6 +1273,7 @@ label.partTime[title="Rotating"] {
     box-shadow: 0 10px 15px 0 rgba(38, 48, 77, 0.14);
 	border: 7px solid #fff;
 	border-radius: 3px;
+	padding-bottom: 95%;
 }
 
 

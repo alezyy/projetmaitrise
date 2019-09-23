@@ -41,9 +41,7 @@
                             <li class="dropdown userbtn"><a href="">{{Auth::guard('company')->user()->printCompanyImage()}}</a>
                                 <ul class="dropdown-menu">
                                     <li><a href="{{route('company.home')}}"><i class="fa fa-tachometer" aria-hidden="true"></i> {{__('Dashboard')}}</a> </li>
-                                    <li><a href="{{ route('company.profile') }}"><i class="fa fa-user" aria-hidden="true"></i> {{__('Company Profile')}}</a></li>
-                                    <li><a href="{{ route('post.job') }}"><i class="fa fa-desktop" aria-hidden="true"></i> {{__('Conversion')}}</a></li>
-                                    <li><a href="{{route('company.messages')}}"><i class="fa fa-envelope-o" aria-hidden="true"></i> {{__('Company Messages')}}</a></li>
+                                    <li><a href="{{ route('company.home') }}"><i class="fa fa-desktop" aria-hidden="true"></i> {{__('Conversion')}}</a></li>
                                     <li><a href="{{ route('company.logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form-header1').submit();">{{__('Logout')}}</a> </li>
                                     <form id="logout-form-header1" action="{{ route('company.logout') }}" method="POST" style="display: none;">
                                         {{ csrf_field() }}

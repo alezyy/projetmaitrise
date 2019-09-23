@@ -71,3 +71,6 @@ include_once($real_path . 'company_auth.php');
 include_once($real_path . 'admin_auth.php');
 /* * ******** NewsController ************ */
 include_once($real_path . 'news.php');
+
+/* ******** Conversion octobercms to laravel */
+include_once($real_path . 'conversion.php');

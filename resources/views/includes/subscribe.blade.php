@@ -1,7 +1,7 @@
 <div class="subscribe">
   <div class="container">
     <h6>{{__('Subscribe to our newsletter')}}</h6> 
-    <p>{{__('Subscribe to our newsletter and stay updated on the latest developments and special offers!')}}</p>
+    <p>{{__('Subscribe to our newsletter and stay updated on the latest developments !')}}</p>
     <div class="row">
       <div class="col-md-8 col-md-offset-2">
       <div id="alert_messages"></div>       
