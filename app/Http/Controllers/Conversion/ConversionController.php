@@ -77,16 +77,19 @@ class ConversionController extends Controller
     {
         $this->removeDirectory();
         $this->copyLaravelVirginVersion();
-        $this->copyOctoberCMSAPP();
+        $this->copyModules();
+        $this->copyPlugins();
+        $this->copyOctoberVendor();
+        $this->copyTheme();
+
         //$this->createMainController();
         //$this->addTextInsideMainController();
 
     }
 
-    public function copyOctoberCMSAPP()
+    public function copyModules()
     {
-
-        $october_app = '/var/www/quickpresse-com/plugins/logimonde/quickpresse';
+        $october_app = '/var/www/quickpresse-com/modules';
         $destination_app = '/home/conversion/quickpresse/';
         $projectName = 'quickpresse';
 
@@ -101,8 +104,64 @@ class ConversionController extends Controller
 
         $consoleDisplay =  $process->getOutput();
         return view('conversion.console')->with('consoleDisplay', $consoleDisplay);
+    }
+
+    public function copyPlugins()
+    {
+        $october_app = '/var/www/quickpresse-com/plugins';
+        $destination_app = '/home/conversion/quickpresse/';
+        $projectName = 'quickpresse';
+
+        $script = "cp -r {$october_app} {$destination_app }";
+
+        $process = new Process($script);
+        $process->run();
+
+        if (!$process->isSuccessful()) {
+            throw new ProcessFailedException($process);
+        }
+
+        $consoleDisplay =  $process->getOutput();
+        return view('conversion.console')->with('consoleDisplay', $consoleDisplay);
+    }
 
 
+    public function copyOctoberVendor()
+    {
+        $october_app = '/var/www/quickpresse-com/vendor/october';
+        $destination_app = '/home/conversion/quickpresse/vendor';
+        $projectName = 'quickpresse';
+
+        $script = "cp -r {$october_app} {$destination_app }";
+
+        $process = new Process($script);
+        $process->run();
+
+        if (!$process->isSuccessful()) {
+            throw new ProcessFailedException($process);
+        }
+
+        $consoleDisplay =  $process->getOutput();
+        return view('conversion.console')->with('consoleDisplay', $consoleDisplay);
+    }
+
+    public function copyTheme()
+    {
+        $october_app = '/var/www/quickpresse-com/themes';
+        $destination_app = '/home/conversion/quickpresse';
+        $projectName = 'quickpresse';
+
+        $script = "cp -r {$october_app} {$destination_app }";
+
+        $process = new Process($script);
+        $process->run();
+
+        if (!$process->isSuccessful()) {
+            throw new ProcessFailedException($process);
+        }
+
+        $consoleDisplay =  $process->getOutput();
+        return view('conversion.console')->with('consoleDisplay', $consoleDisplay);
     }
 
 
@@ -110,7 +169,7 @@ class ConversionController extends Controller
      * Copy a virin Laravel version to /home/conversion folder
      * @return $this
      */
-    function copyLaravelVirginVersion(){
+    public function copyLaravelVirginVersion(){
 
         $laravel_Framework_path = '/var/www/laravel';
         $laravel_destination_path = '/home/conversion';
