@@ -1,13 +1,9 @@
 @php
-$appFolders = array(
-'1' => 'quickpresse',
-'2' => 'jobsportal',
-'3' => 'crm'
-);
+$appFolders = array('1' => 'quickpresse');
 @endphp
 
-{!! Form::open(array('method' => 'get', 'route' => array('conversion.start'), 'class' => 'form')) !!}
-<div class="modal fade" id="modalOne" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+{!! Form::open(array('method' => 'get', 'route' => array('export.transactionPdf.companies'), 'class' => 'form')) !!}
+<div class="modal fade" id="modalTwo" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
      aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
@@ -28,7 +24,7 @@ $appFolders = array(
                     <hr>
                     <div class="col-md-12">
                         <div class="formrow">
-                            <button type="submit" class="btn">{{__('STEP 2 : continue')}} <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></button>
+                            <button type="submit" class="btn">{{__('STEP 3 : continue and analysis')}} <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></button>
                         </div>
                     </div>
 

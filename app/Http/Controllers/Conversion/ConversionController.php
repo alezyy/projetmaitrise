@@ -21,6 +21,9 @@ use App\Traits\CompanyTrait;
 use App\Traits\Cron;
 use Barryvdh\DomPDF\Facade as PDF;
 
+use Symfony\Component\Process\Exception\ProcessFailedException;
+use Symfony\Component\Process\Process;
+
 class ConversionController extends Controller
 {
     use CompanyTrait;
@@ -63,6 +66,93 @@ class ConversionController extends Controller
     public function modalDevOne()
     {
         return view('conversion.modal_one');
+    }
+
+    /**
+     * Start the conversion automation process
+     */
+    public function startConversion()
+    {
+        /* $this->removeDirectory();
+        $this->copyLaravelVirginVersion();
+        $this->createMainController(); */
+        $this->addTextInsideMainController();
+    }
+
+    /**
+     * Copy a virin Laravel version to /home/conversion folder
+     * @return $this
+     */
+    function copyLaravelVirginVersion(){
+
+        $laravel_Framework_path = '/var/www/laravel';
+        $laravel_destination_path = '/home/conversion';
+        $projectName = 'quickpresse';
+
+        $script = "cp -r {$laravel_Framework_path} {$laravel_destination_path}/{$projectName}";
+
+        $process = new Process($script);
+        $process->run();
+
+        if (!$process->isSuccessful()) {
+            throw new ProcessFailedException($process);
+        }
+
+        $consoleDisplay =  $process->getOutput();
+        return view('conversion.console')->with('consoleDisplay', $consoleDisplay);
+    }
+
+
+    public function createMainController()
+    {
+
+        $script = "touch /home/conversion/quickpresse/app/Http/Controllers/QuickpresseController.php";
+
+        $process = new Process($script);
+        $process->run();
+
+        if (!$process->isSuccessful()) {
+            throw new ProcessFailedException($process);
+        }
+
+        $consoleDisplay =  $process->getOutput();
+        return view('conversion.console')->with('consoleDisplay', $consoleDisplay);
+    }
+
+
+    public function addTextInsideMainController()
+    {
+        $script =
+        "cat >> /home/conversion/quickpresse/app/Http/Controllers/QuickpresseController.php << EOF
+        > text line 1
+        > text line 2
+        > text line 3
+        > EOF";
+
+        $process = new Process($script);
+        $process->run();
+
+        if (!$process->isSuccessful()) {
+            throw new ProcessFailedException($process);
+        }
+
+        return  $process->getOutput();
+
+    }
+
+    function removeDirectory(){
+
+        $script = "rm -rf /home/conversion/quickpresse";
+
+        $process = new Process($script);
+        $process->run();
+
+        if (!$process->isSuccessful()) {
+            throw new ProcessFailedException($process);
+        }
+
+        $consoleDisplay =  $process->getOutput();
+        return view('conversion.console')->with('consoleDisplay', $consoleDisplay);
     }
 
 }
